@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Video Downloader</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>YouTube Video Downloader</h1>
+        <form action="/download_process" method="POST" id="downloadForm">
+            <div class="input-group">
+                <input type="text" 
+                       name="url" 
+                       id="url" 
+                       placeholder="Paste YouTube URL here"
+                       required
+                       pattern="^(https?:\/\/)?(www\.)?(youtube\.com|youtu\.be)\/.+"
+                       title="Please enter a valid YouTube URL">
+                       
+            </div>
+            <button type="submit" class="primary-button">Get Video Formats</button>
+        </form>
+        <div class="instructions">
+            <h3>How to use:</h3>
+            <ol>
+                <li>Paste a YouTube video URL in the input field</li>
+                <li>Click "Get Video Formats" to see available options</li>
+                <li>Select your preferred quality and format</li>
+            </ol>
+        </div>
+    </div>
+    <script>
+        // Dynamically adds a footer to the page
+        document.addEventListener("DOMContentLoaded", function () {
+            const footer = document.createElement("div");
+            footer.className = "footer";
+            footer.innerHTML = `
+                Built by <a href="https://www.linkedin.com/in/ravikishan-s-48168033b/" target="_blank">Ravikishan Singh</a>
+            `;
+            document.body.appendChild(footer);
+        });
+    </script>
+    
+</body>
+
+</html>

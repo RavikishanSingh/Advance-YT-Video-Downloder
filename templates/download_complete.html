@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Complete</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container success-container">
+        <div class="success-icon">✓</div>
+        <h1>Download Complete!</h1>
+        <img src="{{ thumbnail }}" alt="Video Thumbnail" class="thumbnail">
+        <h2 class="video-title">{{ title }}</h2>
+        <p class="success-message">Your video has been downloaded successfully to the downloads folder.</p>
+        <div class="button-group">
+            <a href="/" class="primary-button">Download Another Video</a>
+        </div>
+    </div>
+    <script>
+        // Dynamically adds a footer to the page
+        document.addEventListener("DOMContentLoaded", function () {
+            const footer = document.createElement("div");
+            footer.className = "footer";
+            footer.innerHTML = `
+                Built by <a href="https://www.linkedin.com/in/ravikishan-s-48168033b/" target="_blank">Ravikishan Singh</a>
+            `;
+            document.body.appendChild(footer);
+        });
+    </script>
+    
+</body>
+</html>

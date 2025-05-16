@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container error-container">
+        <div class="error-icon">⚠</div>
+        <h1>Oops! Something went wrong</h1>
+        <p class="error-message">{{ error_message }}</p>
+        <div class="button-group">
+            <a href="/" class="primary-button">Try Again</a>
+        </div>
+    </div>
+    <script>
+        // Dynamically adds a footer to the page
+        document.addEventListener("DOMContentLoaded", function () {
+            const footer = document.createElement("div");
+            footer.className = "footer";
+            footer.innerHTML = `
+                Built by <a href="https://www.linkedin.com/in/ravikishan-s-48168033b/" target="_blank">Ravikishan Singh</a>
+            `;
+            document.body.appendChild(footer);
+        });
+    </script>
+    
+</body>
+</html>
